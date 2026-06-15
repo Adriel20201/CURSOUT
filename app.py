@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Terminal UI - Painel de Cursos Gratuitos de Tecnologia"""
-
+#versao com painel azul ok..FE
 import json
 import os
 import subprocess
