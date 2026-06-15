@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+env/
+
+# Scrapy output
+*_output.json
+*_result.json
+*_test.json
+filtro_*.json
+
+# Logs
+*.log
+log.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+cursos_tech/todos_cursos.json
+cursos_tech/todos_cursos.csv
