@@ -14,7 +14,9 @@ class IfrsSpider(scrapy.Spider):
             yield CursoItem(
                 titulo=curso.css("h4.curso-item__title a::text").get("").strip(),
                 plataforma="IFRS",
-                url=response.url,
+                url=response.urljoin(
+                    curso.css("h4.curso-item__title a::attr(href)").get("")
+                ),
                 carga_horaria=curso.css(
                     "span.curso-item__meta--cargahoraria::text"
                 ).get("").strip(),

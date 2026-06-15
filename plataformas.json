@@ -1,0 +1,42 @@
+{
+  "1": {
+    "nome": "IFRS",
+    "spider": "ifrs",
+    "url": "estude.ifrs.edu.br"
+  },
+  "2": {
+    "nome": "Escola Virtual (Fundação Bradesco)",
+    "spider": "ev",
+    "url": "ev.org.br"
+  },
+  "3": {
+    "nome": "+IFMG",
+    "spider": "ifmg",
+    "url": "mais.ifmg.edu.br"
+  },
+  "4": {
+    "nome": "Plataforma Mundi (IFSul)",
+    "spider": "mundi",
+    "url": "mundi.ifsul.edu.br"
+  },
+  "5": {
+    "nome": "Escola do Trabalhador 4.0",
+    "spider": "escola_trabalhador",
+    "url": "ead.escoladotrabalhador40.com.br"
+  },
+  "6": {
+    "nome": "IBM SkillsBuild",
+    "spider": "ibm",
+    "url": "skillsbuild.org"
+  },
+  "7": {
+    "nome": "Coursera (USP)",
+    "spider": "coursera_usp",
+    "url": "coursera.org"
+  },
+  "8": {
+    "nome": "Recode",
+    "spider": "recode",
+    "url": "recode.org.br"
+  }
+}

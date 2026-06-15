@@ -7,8 +7,11 @@ import os
 
 def run_spider(name):
     print(f"\n=== Executando spider: {name} ===")
+    saida = os.path.join(os.path.dirname(__file__), f"{name}_output.json")
+    if os.path.exists(saida):
+        os.remove(saida)
     result = subprocess.run(
-        ["scrapy", "crawl", name, "-o", f"{name}_output.json"],
+        ["scrapy", "crawl", name, "-o", saida],
         capture_output=True, text=True, cwd=os.path.dirname(__file__)
     )
     if result.returncode == 0:
@@ -21,10 +24,17 @@ def merge_results():
     all_courses = []
     for fname in os.listdir(os.path.dirname(__file__)):
         if fname.endswith("_output.json"):
+            path = os.path.join(os.path.dirname(__file__), fname)
             try:
-                with open(fname, encoding="utf-8") as f:
-                    data = json.load(f)
+                raw = open(path, encoding="utf-8").read().strip()
+                data = json.loads(raw)
                 all_courses.extend(data)
+            except json.JSONDecodeError:
+                try:
+                    data = json.loads("[" + raw.replace("}{", "},{") + "]")
+                    all_courses.extend(data)
+                except Exception:
+                    print(f"  Erro ao ler {fname} (formato inválido)")
             except Exception as e:
                 print(f"  Erro ao ler {fname}: {e}")
 
